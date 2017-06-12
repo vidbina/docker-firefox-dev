@@ -10,6 +10,7 @@ firefox-dev(){
   #fi
 
   local app_name=firefox-dev
+  local docker_image=${DOCKER_REPO_PREFIX}/${app_name}
 
 	del_stopped ${app_name}
 
@@ -30,7 +31,7 @@ firefox-dev(){
 		--device /dev/snd \
 		--device /dev/dri \
 		--name ${app_name} \
-		${DOCKER_REPO_PREFIX}/${app_name} "$@"
+		${docker_image} "$@"
 
 	# exit current shell
 	exit 0
