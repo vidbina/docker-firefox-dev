@@ -8,4 +8,4 @@ image:
 	${DOCKER} build --build-arg FIREFOX_TAR_URI=${FIREFOX_TAR} -t ${IMAGE} .
 
 shell:
-	${DOCKER} run --rm --name ${PROJECT} -it ${IMAGE} /bin/bash
+	${DOCKER} run --rm --name ${PROJECT}-shell --entrypoint=/bin/bash -it ${IMAGE}
